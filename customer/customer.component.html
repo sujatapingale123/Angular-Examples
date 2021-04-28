@@ -1,0 +1,59 @@
+<h1>{{name.toUpperCase()}}</h1>
+
+<h3> {{"Today is " + currentDate}}</h3>
+<h3>{{"Element Length"+ name.length}}</h3>
+<input type="text" [id]="mid" value="name">
+
+<h3 [class]="txtcolor">Example of Class Binding </h3>
+
+<h3 [class.text-success]="bollval">Class use by conditions</h3>
+
+<button (click)="onclick()"> Submit </button>
+
+<input #empname type="text" >
+<button (click)="getvals(empname.value)">Log</button>
+
+<br><br><br>
+<h2>Example of Two Way Binding</h2>
+<input [(ngModel)]="custname" type="text">
+{{custname}}
+
+<input [(ngModel)]="contact" type="text">
+{{contact}}
+
+<input [(ngModel)]="message" type="text">
+{{message}}
+
+
+<br><br><br>
+<h2>Example of ngIf Directive</h2>
+<h4 *ngIf="bollval; else elseBlock"> If directives Status </h4>
+<ng-template #elseBlock>
+    <h4>Hidden Status</h4>
+</ng-template>
+
+<h2> other way for ngIf</h2>
+<div *ngIf="bollval; then thenBlock; else elseBlock"></div>
+
+<ng-template #thenBlock> 
+    <h4> then block</h4>
+</ng-template>
+
+<ng-template #elseBlock> 
+    <h4> else block </h4>
+</ng-template>
+
+<br><br>
+<h2>Switch Case Example</h2>
+<div [ngSwitch]="color">
+<div *ngSwitchCase="'red'">red color</div>
+<div *ngSwitchCase="'Green'"> Green Color</div>
+<div *ngSwitchCase="'orange'">Orange color </div>
+<div *ngSwitchDefault> not Any color Selected </div>
+</div>
+<br><br>
+<h2>Exampe of ngFor</h2>
+
+<div *ngFor="let x of colors">
+    <p>{{x}}</p>
+    </div>
